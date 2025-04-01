@@ -46,3 +46,19 @@ function closeFooterBanner() {
     document.getElementById("footer-banner").classList.add("hide");
     setCookie("footerBannerClosed", true, 7);
 }
+document.getElementById("modal-close").addEventListener("click", closeModal);
+document.getElementById("top-close").addEventListener("click", closeTopBanner);
+document.getElementById("footer-close").addEventListener("click", closeFooterBanner);
+
+document.getElementById("clear-data").addEventListener("click", function () {
+    localStorage.clear();
+    sessionStorage.clear();
+    document.cookie.split(";").forEach(function (c) {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+    location.reload();
+});
+
+setTimeout(showFooterBanner, 1000);
+setTimeout(showTopBanner, 2000);
+setTimeout(showModal, 4000);
