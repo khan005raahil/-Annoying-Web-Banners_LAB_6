@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#content {
+    padding: 40px;
+    text-align: center;
+}
+
+.banner {
+    position: fixed;
+    width: auto;
+    max-width: 90%;
+    background-color: #f9ed69;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+    border: 2px dashed red;
+    animation: shake 0.3s infinite;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#top-banner {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#footer-banner {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modal {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
+
+#clear-data {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10001;
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
